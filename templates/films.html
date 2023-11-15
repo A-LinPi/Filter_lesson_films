@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FILMS</title>
+</head>
+<body>
+    <h1>Фильмы</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+            {{ forma }}
+        </table>
+        <input type="submit" value="Поиск">
+    </form>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>COUNTRY</th>
+                <th>YEAR</th>
+            </tr>
+            {% for one in database %}
+            <tr>
+                <td>{{ one.id }}</td>
+                <td>{{ one.film_name }}</td>
+                <td>{{ one.film_country }}</td>
+                <td>{{ one.film_year }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+</body>
+</html>
